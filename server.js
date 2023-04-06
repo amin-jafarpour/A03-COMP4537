@@ -51,6 +51,7 @@ const {
 let pokeModel = null;
 
 const start = asyncWrapper(async() => {
+    console.log()
     await connectDB({ drop: false });
     const doc = await userModel.findOne({ username: "admin" });
     if (!doc)
