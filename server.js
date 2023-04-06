@@ -25,14 +25,17 @@ const util = require("./util.js");
 
 
     */
+
 const port = process.env.PORT || 8000;
-app.listen(process.env.authServerPORT, async(err) => {
-    if (err) throw new PokemonDbError(err);
-    else
-        console.log(
-            `Phew! Server is running on port: ${port}`
-        );
-});
+
+
+// app.listen(process.env.authServerPORT, async(err) => {
+//     if (err) throw new PokemonDbError(err);
+//     else
+//         console.log(
+//             `Phew! Server is running on port: ${port}`
+//         );
+// });
 
 const {
     PokemonBadRequest,
@@ -63,6 +66,14 @@ const start = asyncWrapper(async() => {
     await populatePokemons(pokeSchema)
 
     pokeModel = mongoose.model("pokemons", pokeSchema);
+
+    app.listen(process.env.authServerPORT, async(err) => {
+        if (err) throw new PokemonDbError(err);
+        else
+            console.log(
+                `Phew! Server is running on port: ${port}`
+            );
+    });
 });
 
 start();
