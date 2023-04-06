@@ -92,7 +92,8 @@
     },
     "scripts": {
         "test": "jest --port=9000",
-        "test:watch": "jest --watch"
+        "test:watch": "jest --watch",
+        "start": "node server.js"
     },
     "keywords": [],
     "author": "",
