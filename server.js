@@ -63,7 +63,7 @@ const start = asyncWrapper(async() => {
 
     await connectDB({ drop: false });
     let pokeSchema = await getTypes();
-    await populatePokemons(pokeSchema)
+    // await populatePokemons(pokeSchema)
 
     pokeModel = mongoose.model("pokemons", pokeSchema);
 
